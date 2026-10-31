@@ -4,22 +4,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rushikesh Jadhav — The Journey Log</title>
-<meta name="description" content="A running log of development work, research, writing, and life on the side.">
+<meta name="description" content="Rushikesh Jadhav — remote sensing & GIS researcher in water resources. Hydrological & hydraulic modelling, flood risk, automation and decision-support dashboards.">
+<meta name="author" content="Rushikesh Jadhav">
+<link rel="canonical" href="https://jrushi29.github.io/">
+<!-- Link preview (LinkedIn / WhatsApp / X). Add images/og-cover.png (1200x630) for a picture preview. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rushikesh Jadhav — The Journey Log">
+<meta property="og:description" content="Rushikesh Jadhav — remote sensing & GIS researcher in water resources. Hydrological & hydraulic modelling, flood risk, automation and decision-support dashboards.">
+<meta property="og:url" content="https://jrushi29.github.io/">
+<meta property="og:image" content="https://jrushi29.github.io/images/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+<a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap">
-    <!-- EDIT: replace "Rushikesh Jadhav" with your actual name -->
     <a href="index.html" class="brand">Rushikesh Jadhav<span>.</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu">Menu</button>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
     <nav class="main-nav">
       <ul>
         <li><a href="index.html" class="active">Journey</a></li>
         <li><a href="dev-research.html">Dev &amp; Research</a></li>
+        <li><a href="brief.html">Weekly Brief</a></li>
         <li><a href="articles.html">Articles</a></li>
         <li><a href="writing.html">Writing</a></li>
         <li><a href="hobbies.html">Hobbies</a></li>
@@ -29,88 +40,147 @@
   </div>
 </header>
 
+<main id="main">
+
 <section class="hero">
   <div class="wrap">
-    <p class="kicker">Entry log — ongoing</p>
-    <!-- EDIT: hero headline -->
-    <h1>A running record of what I build, learn, and wander into.</h1>
-    <!-- EDIT: hero subtext -->
-    <p class="lede">Dashboards and research on one page, travel notes and half-formed opinions on another. This is the whole journey, logged as it happens — new entries added most weeks.</p>
+    <p class="kicker">Water resources &middot; Remote sensing &amp; GIS &middot; Decision support</p>
+    <h1>Turning models of water into decisions people can use.</h1>
+    <p class="lede">I'm Rushikesh, a remote sensing &amp; GIS researcher and agricultural engineer. I build hydrological
+      and hydraulic models, automate the workflows around them, and wrap the results in dashboards that
+      researchers, administrators and engineers can act on. This site is the running log of that work &mdash;
+      and of everything else.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="dev-research.html">See my work</a>
+      <a class="btn" href="brief.html">Read the Weekly Brief</a>
+    </div>
+    <ul class="focus-chips" aria-label="Areas of focus">
+      <li>HEC-HMS</li><li>HEC-RAS</li><li>SWAT</li><li>Google Earth Engine</li>
+      <li>Python automation</li><li>Flood risk</li><li>Dashboards &amp; DSS</li>
+    </ul>
+  </div>
+</section>
 
-    <div class="filters">
-      <button data-filter="all" class="active">All entries</button>
-      <button data-filter="dev">Dev</button>
-      <button data-filter="research">Research</button>
-      <button data-filter="articles">Articles</button>
-      <button data-filter="personal">Personal</button>
-      <button data-filter="hobbies">Hobbies</button>
+<section class="pillars">
+  <div class="wrap pillar-grid">
+    <div class="pillar">
+      <span class="pillar-num">01</span>
+      <h2>Model</h2>
+      <p>Rainfall&ndash;runoff, reservoir routing, dam-break and inundation modelling, driven by satellite and
+        weather-forecast data.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-num">02</span>
+      <h2>Automate</h2>
+      <p>Headless model runs, parameter injection and data pipelines in Python &mdash; so a forecast or an
+        analysis is repeatable, not a week of clicking.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-num">03</span>
+      <h2>Decide</h2>
+      <p>Dashboards and decision-support tools that turn model output into maps, numbers and actions.</p>
     </div>
   </div>
 </section>
 
-<section class="log">
+<section class="log-section">
   <div class="wrap">
+    <div class="section-head">
+      <h2>The log</h2>
+      <p>What I'm building, learning and wandering into &mdash; newest first.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filter entries">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="dev">Dev</button>
+      <button data-filter="research">Research</button>
+      <button data-filter="brief">Brief</button>
+      <button data-filter="articles">Articles</button>
+      <button data-filter="personal">Personal</button>
+      <button data-filter="hobbies">Hobbies</button>
+    </div>
 
-    <!-- EDIT: each block below is one journal entry. Copy/paste a block to add a new one.
-         data-category must be one of: dev, research, articles, personal, hobbies -->
+    <div class="log">
+      <!-- EDIT: each <article> is one entry. Copy a block to add a new one (newest on top).
+           data-category must be one of: dev, research, brief, articles, personal, hobbies.
+           Replace "Ongoing" with a date like 2026.11.07 when you log a dated entry. -->
 
-    <article class="entry" data-category="research">
-      <div class="meta"><span class="num">005</span>2026.08.18</div>
-      <div>
-        <span class="tag research">Research</span>
-        <h2><a href="dev-research.html#entry-005">Modeling churn with a leaky-bucket approach</a></h2>
-        <p>A short writeup on why a simple leaky-bucket model outperformed our first churn classifier, with the notebook and dashboard linked.</p>
-        <a class="read-more" href="dev-research.html#entry-005">Read entry →</a>
-      </div>
-    </article>
+      <article class="entry" data-category="brief">
+        <div class="meta"><span class="num">006</span>Launching</div>
+        <div>
+          <span class="tag brief">Brief</span>
+          <h3><a href="brief.html">Starting the Water, Climate &amp; AI Brief</a></h3>
+          <p>A short Saturday digest of what's new in AI for hydrology, flood modelling, groundwater, climate and
+            agriculture &mdash; with a line on why each item matters.</p>
+          <a class="read-more" href="brief.html">Open the brief &rarr;</a>
+        </div>
+      </article>
 
-    <article class="entry" data-category="hobbies">
-      <div class="meta"><span class="num">004</span>2026.08.11</div>
-      <div>
-        <span class="tag hobbies">Travel</span>
-        <h3><a href="hobbies.html#entry-004">Three days in the Western Ghats, mostly lost</a></h3>
-        <p>Notes, photos, and the one trail I'd genuinely warn people about.</p>
-        <a class="read-more" href="hobbies.html#entry-004">Read entry →</a>
-      </div>
-    </article>
+      <article class="entry" data-category="dev">
+        <div class="meta"><span class="num">005</span>Ongoing</div>
+        <div>
+          <span class="tag dev">Dev</span>
+          <h3><a href="dev-research.html#hms">Automating HEC-HMS end to end</a></h3>
+          <p>A headless pipeline that takes a weather-model rainfall forecast all the way to reservoir and flood
+            hydrographs &mdash; and is being generalised into one dashboard for several basin models.</p>
+          <a class="read-more" href="dev-research.html#hms">Project notes &rarr;</a>
+        </div>
+      </article>
 
-    <article class="entry" data-category="articles">
-      <div class="meta"><span class="num">003</span>2026.08.04</div>
-      <div>
-        <span class="tag articles">Article</span>
-        <h3><a href="articles.html#entry-003">Why most dashboards get ignored after week two</a></h3>
-        <p>A longer piece on the gap between "shipped a dashboard" and "someone actually opens it."</p>
-        <a class="read-more" href="articles.html#entry-003">Read entry →</a>
-      </div>
-    </article>
+      <article class="entry" data-category="dev">
+        <div class="meta"><span class="num">004</span>Ongoing</div>
+        <div>
+          <span class="tag dev">Dev</span>
+          <h3><a href="dev-research.html#par">A dashboard for dam-break population at risk</a></h3>
+          <p>From HEC-RAS dam-break results to a population-at-risk estimate and maps, in a tool I use for
+            every new analysis.</p>
+          <a class="read-more" href="dev-research.html#par">Project notes &rarr;</a>
+        </div>
+      </article>
 
-    <article class="entry" data-category="dev">
-      <div class="meta"><span class="num">002</span>2026.07.28</div>
-      <div>
-        <span class="tag dev">Dev</span>
-        <h3><a href="dev-research.html#entry-002">Built a live inventory dashboard with Streamlit</a></h3>
-        <p>Walkthrough of the stack, the tricky bits with caching, and a link to the live version.</p>
-        <a class="read-more" href="dev-research.html#entry-002">Read entry →</a>
-      </div>
-    </article>
+      <article class="entry" data-category="dev">
+        <div class="meta"><span class="num">003</span>Ongoing</div>
+        <div>
+          <span class="tag dev">Dev</span>
+          <h3><a href="dev-research.html#gee">GEE Scout: the right datasets for any area</a></h3>
+          <p>Draw an area of interest, get a shortlist of relevant Earth Engine datasets for the project at hand.</p>
+          <a class="read-more" href="dev-research.html#gee">Project notes &rarr;</a>
+        </div>
+      </article>
 
-    <article class="entry" data-category="personal">
-      <div class="meta"><span class="num">001</span>2026.07.20</div>
-      <div>
-        <span class="tag personal">Personal</span>
-        <h3><a href="writing.html#entry-001">Starting this log</a></h3>
-        <p>Why I'm keeping this in one place instead of scattered across notes apps — and what I want it to become.</p>
-        <a class="read-more" href="writing.html#entry-001">Read entry →</a>
-      </div>
-    </article>
+      <article class="entry" data-category="research">
+        <div class="meta"><span class="num">002</span><!-- EDIT: year -->Milestone</div>
+        <div>
+          <span class="tag research">Research</span>
+          <h3>M.Tech in Remote Sensing &amp; GIS, IIRS</h3>
+          <p>Specialised in water resources at the Indian Institute of Remote Sensing. <!-- EDIT: thesis topic, one line --></p>
+        </div>
+      </article>
 
+      <article class="entry" data-category="personal">
+        <div class="meta"><span class="num">001</span><!-- EDIT: year -->Milestone</div>
+        <div>
+          <span class="tag personal">Personal</span>
+          <h3>Agricultural engineering &mdash; where it started</h3>
+          <p>Soil, water and crops first; satellites and models came later. <!-- EDIT: college / one line --></p>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="wrap">© 2026 Rushikesh Jadhav. Built by hand, updated by habit.</div>
-</footer>
+</main>
 
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; <span id="year">2026</span> Rushikesh Jadhav &middot; Water resources &middot; Remote sensing &amp; GIS &middot; Decision support</p>
+    <p class="foot-links">
+      <!-- EDIT: replace with your real profile links -->
+      <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/JRushi29" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.instagram.com/YOUR-INSTAGRAM" target="_blank" rel="noopener">Instagram</a>
+    </p>
+  </div>
+</footer>
 <script src="js/main.js"></script>
 </body>
 </html>

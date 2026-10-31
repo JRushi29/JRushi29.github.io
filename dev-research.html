@@ -3,21 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dev & Research — Rushikesh Jadhav</title>
+<title>Dev &amp; Research — Rushikesh Jadhav</title>
+<meta name="description" content="HEC-HMS forecast automation, a dam-break population-at-risk dashboard, GEE Scout and the roadmap to flood decision support.">
+<meta name="author" content="Rushikesh Jadhav">
+<link rel="canonical" href="https://jrushi29.github.io/dev-research.html">
+<!-- Link preview (LinkedIn / WhatsApp / X). Add images/og-cover.png (1200x630) for a picture preview. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dev &amp; Research — Rushikesh Jadhav">
+<meta property="og:description" content="HEC-HMS forecast automation, a dam-break population-at-risk dashboard, GEE Scout and the roadmap to flood decision support.">
+<meta property="og:url" content="https://jrushi29.github.io/dev-research.html">
+<meta property="og:image" content="https://jrushi29.github.io/images/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+<a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap">
     <a href="index.html" class="brand">Rushikesh Jadhav<span>.</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu">Menu</button>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
     <nav class="main-nav">
       <ul>
         <li><a href="index.html">Journey</a></li>
         <li><a href="dev-research.html" class="active">Dev &amp; Research</a></li>
+        <li><a href="brief.html">Weekly Brief</a></li>
         <li><a href="articles.html">Articles</a></li>
         <li><a href="writing.html">Writing</a></li>
         <li><a href="hobbies.html">Hobbies</a></li>
@@ -27,71 +40,187 @@
   </div>
 </header>
 
+<main id="main">
+
 <section class="page-head">
   <div class="wrap">
-    <p class="kicker" style="color:var(--blue)">Dev &amp; Research</p>
-    <h1>Things I've built and findings worth writing down.</h1>
-    <p>Dashboards, tools, and short research writeups. Live dashboards are embedded where possible — otherwise linked out.</p>
+    <p class="kicker" style="color: var(--blue);">Dev &amp; Research</p>
+    <h1>Tools for water decisions.</h1>
+    <p>Model automation, dashboards and research I'm working on. Data used in client and government work
+      is confidential, so these notes describe the methods and the tools &mdash; not the data.</p>
+    <nav class="toc" aria-label="On this page">
+      <a href="#hms">HEC-HMS automation</a>
+      <a href="#par">Dam-break PAR dashboard</a>
+      <a href="#gee">GEE Scout</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#stack">Toolkit</a>
+    </nav>
   </div>
 </section>
 
-<!-- EDIT: dashboard/project cards. Duplicate a .card block to add more. -->
-<section class="card-grid wrap">
-
-  <div class="card">
-    <span class="tag dev">Dev</span>
-    <h3>Live inventory dashboard</h3>
-    <p>Streamlit app tracking stock levels across three warehouses, refreshed hourly.</p>
-    <!-- To embed a live dashboard (Tableau Public, Streamlit, PowerBI), replace this note with an <iframe src="YOUR_EMBED_URL" width="100%" height="400"></iframe> -->
-    <div class="embed-note">Embed placeholder — paste your dashboard's embed link here</div>
-    <a class="card-link" href="#">View live dashboard →</a>
-  </div>
-
-  <div class="card">
-    <span class="tag research">Research</span>
-    <h3>Churn modeling notebook</h3>
-    <p>Comparing a leaky-bucket heuristic against a gradient-boosted classifier on subscription data.</p>
-    <div class="embed-note">Link to notebook / GitHub repo here</div>
-    <a class="card-link" href="#">View notebook →</a>
-  </div>
-
-  <div class="card">
-    <span class="tag dev">Dev</span>
-    <h3>Second project name</h3>
-    <p>One or two sentences describing what it does and why you built it.</p>
-    <div class="embed-note">Embed or link placeholder</div>
-    <a class="card-link" href="#">View project →</a>
-  </div>
-
-</section>
-
-<section class="log wrap">
-  <!-- EDIT: full writeups, linked from the home feed via #entry-XXX anchors -->
-
-  <article class="entry" id="entry-005">
-    <div class="meta"><span class="num">005</span>2026.08.18</div>
-    <div>
-      <span class="tag research">Research</span>
-      <h2>Modeling churn with a leaky-bucket approach</h2>
-      <p>Write your full entry here. Explain the problem, what you tried, what worked, and link to the notebook or dashboard. Keep the tone like a log entry — dated, specific, and honest about what didn't work too.</p>
+<section class="project" id="hms">
+  <div class="wrap project-grid">
+    <div class="project-side">
+      <span class="tag dev">Dev &middot; Automation</span>
+      <p class="status"><span class="dot live"></span>In active development</p>
+      <dl class="facts">
+        <dt>Models</dt><dd>HEC-HMS, Vortex, HEC-DSS</dd>
+        <dt>Code</dt><dd>Python, Jython</dd>
+        <dt>Input</dt><dd>WRF rainfall forecasts</dd>
+        <dt>Use</dt><dd>Flood forecasting, reservoir operation</dd>
+      </dl>
     </div>
-  </article>
-
-  <article class="entry" id="entry-002">
-    <div class="meta"><span class="num">002</span>2026.07.28</div>
-    <div>
-      <span class="tag dev">Dev</span>
-      <h2>Built a live inventory dashboard with Streamlit</h2>
-      <p>Write your full entry here — the stack you used, a tricky bug you hit, and a link to the live version or repo.</p>
+    <div class="project-body">
+      <h2>Headless HEC-HMS forecasting pipeline</h2>
+      <p class="lead">Running a basin model for every new forecast by hand is slow and error-prone. This pipeline
+        runs the whole chain without opening the HEC-HMS interface.</p>
+      <ol class="flow" aria-label="Pipeline stages">
+        <li><strong>Forecast in</strong><span>WRF NetCDF rainfall</span></li>
+        <li><strong>Grid &amp; clip</strong><span>Vortex &rarr; gridded DSS over the basin</span></li>
+        <li><strong>Inject</strong><span>Parameters &amp; initial conditions set in code</span></li>
+        <li><strong>Operate</strong><span>Rule-based reservoir releases</span></li>
+        <li><strong>Run</strong><span>Headless HEC-HMS compute</span></li>
+        <li><strong>Report</strong><span>Hydrographs, peaks, storage</span></li>
+      </ol>
+      <h3>What it does</h3>
+      <ul class="ticks">
+        <li>Extracts the basin's rainfall from the forecast grid and writes it to HEC-DSS automatically.</li>
+        <li>Injects loss, transform and routing parameters from configuration instead of manual editing.</li>
+        <li>Applies rule-based reservoir operation so releases follow defined operating rules.</li>
+        <li>Runs HEC-HMS headlessly through its scripting interface and collects the results.</li>
+      </ul>
+      <h3>Where it's going</h3>
+      <p>The same engine is being generalised to <strong>several urban and reservoir-regulated basin models</strong>
+        behind one common dashboard: pick a model, a forecast file and a basin boundary, run, and see inputs and
+        outputs side by side. Alongside it, I'm rebuilding basin parameterisation (curve number, lag, routing)
+        from first principles with proper calibration and validation.</p>
     </div>
-  </article>
-
+  </div>
 </section>
+
+<section class="project" id="par">
+  <div class="wrap project-grid">
+    <div class="project-side">
+      <span class="tag dev">Dev &middot; Dashboard</span>
+      <p class="status"><span class="dot live"></span>In regular use</p>
+      <dl class="facts">
+        <dt>Models</dt><dd>HEC-RAS (dam-break)</dd>
+        <dt>Code</dt><dd>Python, Streamlit, GIS stack</dd>
+        <dt>Input</dt><dd>Dam-break flood results, settlement data</dd>
+        <dt>Use</dt><dd>Dam safety, emergency planning</dd>
+      </dl>
+    </div>
+    <div class="project-body">
+      <h2>Dam-break Population-at-Risk (PAR) dashboard</h2>
+      <p class="lead">A dam-break study isn't finished when the flood map is &mdash; the question is who is in
+        its path. This dashboard takes HEC-RAS dam-break results for a dam and turns them into a
+        population-at-risk assessment.</p>
+      <!-- VERIFY: adjust this list so it matches exactly what your dashboard does -->
+      <h3>What it does</h3>
+      <ul class="ticks">
+        <li>Loads the dam-break flood extent and depth results from HEC-RAS.</li>
+        <li>Overlays settlements and population to estimate how many people are inside the flooded area.</li>
+        <li>Summarises results per settlement as tables and maps ready for reports.</li>
+        <li>Makes the analysis repeatable for every new dam in a study &mdash; same steps, same outputs.</li>
+      </ul>
+      <h3>Why it matters</h3>
+      <p>Population at risk drives dam hazard classification and emergency action planning. Automating it
+        turns a slow manual GIS exercise into something consistent across many dams.</p>
+      <div class="media-slot">
+        <!-- EDIT: add a screenshot (images/par-dashboard.png) with dummy data, e.g.
+             <img src="images/par-dashboard.png" alt="PAR dashboard screenshot"> -->
+        <span>Screenshot slot &mdash; add an image with sample data only</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="project" id="gee">
+  <div class="wrap project-grid">
+    <div class="project-side">
+      <span class="tag research">Dev &middot; Research tool</span>
+      <p class="status"><span class="dot build"></span>Prototype</p>
+      <dl class="facts">
+        <dt>Platform</dt><dd>Google Earth Engine API</dd>
+        <dt>Code</dt><dd>Python</dd>
+        <dt>Input</dt><dd>Area of interest + project brief</dd>
+        <dt>Use</dt><dd>Faster project scoping</dd>
+      </dl>
+    </div>
+    <div class="project-body">
+      <h2>GEE Scout &mdash; dataset discovery for any area</h2>
+      <p class="lead">Every new study starts with the same question: which satellite and climate datasets cover my
+        area, at what resolution and for which years? GEE Scout answers it in one step.</p>
+      <ul class="ticks">
+        <li>Takes an area of interest and the project's needs (e.g. rainfall, land cover, terrain, soil moisture).</li>
+        <li>Gathers matching Earth Engine datasets with coverage, resolution and time span.</li>
+        <li>Leaves the final choice to the analyst, with everything needed to decide side by side.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="roadmap" id="roadmap">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Roadmap</h2>
+      <p>Where this work is heading &mdash; the long game is decision support for water.</p>
+    </div>
+    <ol class="timeline">
+      <li class="now">
+        <span class="when">Now</span>
+        <div><h3>Robust multi-model HMS automation</h3>
+          <p>One engine, many basin models, config-driven and tested.</p></div>
+      </li>
+      <li>
+        <span class="when">Next</span>
+        <div><h3>A common flood-forecast dashboard</h3>
+          <p>Choose model and forecast, run, and see rainfall, inflows, reservoir storage and peaks together.</p></div>
+      </li>
+      <li>
+        <span class="when">Next</span>
+        <div><h3>Calibration &amp; validation done properly</h3>
+          <p>Rebuilding rainfall&ndash;runoff parameterisation with sound scientific practice.</p></div>
+      </li>
+      <li>
+        <span class="when">Later</span>
+        <div><h3>Decision-support system for flood risk</h3>
+          <p>Linking forecasts, inundation and population at risk into one view for administrators.</p></div>
+      </li>
+      <li>
+        <span class="when">Later</span>
+        <div><h3>Open-source toolkits</h3>
+          <p>Releasing reusable parts of the HMS and dam-break tooling for other modellers.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="stack" id="stack">
+  <div class="wrap">
+    <div class="section-head"><h2>Toolkit</h2></div>
+    <div class="stack-grid">
+      <div><h3>Modelling</h3><p>HEC-HMS &middot; HEC-RAS &middot; SWAT &middot; Vortex &middot; HEC-DSS</p></div>
+      <div><h3>Geospatial</h3><p>Google Earth Engine &middot; QGIS &middot; ArcGIS &middot; remote sensing data</p></div>
+      <div><h3>Code</h3><p>Python &middot; Jython &middot; geospatial Python stack</p></div>
+      <div><h3>Delivery</h3><p>Streamlit dashboards &middot; automated reports &middot; GitHub</p></div>
+    </div>
+  </div>
+</section>
+
+</main>
 
 <footer class="site-footer">
-  <div class="wrap">© 2026 Rushikesh Jadhav. Built by hand, updated by habit.</div>
+  <div class="wrap">
+    <p>&copy; <span id="year">2026</span> Rushikesh Jadhav &middot; Water resources &middot; Remote sensing &amp; GIS &middot; Decision support</p>
+    <p class="foot-links">
+      <!-- EDIT: replace with your real profile links -->
+      <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/JRushi29" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.instagram.com/YOUR-INSTAGRAM" target="_blank" rel="noopener">Instagram</a>
+    </p>
+  </div>
 </footer>
-
 <script src="js/main.js"></script>
 </body>
 </html>

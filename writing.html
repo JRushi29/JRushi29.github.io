@@ -3,21 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Personal Writing — Rushikesh Jadhav</title>
+<title>Writing &amp; Vlogs — Rushikesh Jadhav</title>
+<meta name="description" content="Rushikesh Jadhav — remote sensing & GIS researcher in water resources. Hydrological & hydraulic modelling, flood risk, automation and decision-support dashboards.">
+<meta name="author" content="Rushikesh Jadhav">
+<link rel="canonical" href="https://jrushi29.github.io/writing.html">
+<!-- Link preview (LinkedIn / WhatsApp / X). Add images/og-cover.png (1200x630) for a picture preview. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Writing &amp; Vlogs — Rushikesh Jadhav">
+<meta property="og:description" content="Rushikesh Jadhav — remote sensing & GIS researcher in water resources. Hydrological & hydraulic modelling, flood risk, automation and decision-support dashboards.">
+<meta property="og:url" content="https://jrushi29.github.io/writing.html">
+<meta property="og:image" content="https://jrushi29.github.io/images/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+<a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap">
     <a href="index.html" class="brand">Rushikesh Jadhav<span>.</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu">Menu</button>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
     <nav class="main-nav">
       <ul>
         <li><a href="index.html">Journey</a></li>
         <li><a href="dev-research.html">Dev &amp; Research</a></li>
+        <li><a href="brief.html">Weekly Brief</a></li>
         <li><a href="articles.html">Articles</a></li>
         <li><a href="writing.html" class="active">Writing</a></li>
         <li><a href="hobbies.html">Hobbies</a></li>
@@ -27,34 +40,53 @@
   </div>
 </header>
 
+<main id="main">
+
 <section class="page-head">
   <div class="wrap">
-    <p class="kicker" style="color:var(--rose)">Personal Writing &amp; Vlogs</p>
+    <p class="kicker" style="color: var(--rose);">Writing &amp; Vlogs</p>
     <h1>The unfiltered part of the log.</h1>
-    <p>Essays, reflections, and video logs — embed a YouTube link directly into an entry if it's a vlog.</p>
+    <p>Essays, reflections and video logs.</p>
   </div>
 </section>
 
-<section class="log wrap">
-  <!-- EDIT: duplicate this block for each personal entry.
-       For a vlog, replace the <p> with an iframe:
-       <iframe width="100%" height="380" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe> -->
-
-  <article class="entry" id="entry-001">
-    <div class="meta"><span class="num">001</span>2026.07.20</div>
-    <div>
-      <span class="tag personal">Personal</span>
-      <h2>Starting this log</h2>
-      <p>Write your full entry here — why you're keeping this log, what you want it to become, and what "done" doesn't mean for a project like this.</p>
-    </div>
-  </article>
-
+<section class="log">
+  <div class="wrap">
+    <!-- EDIT: duplicate a block per entry. For a vlog, replace the .media-slot div with:
+         <div class="video"><iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Vlog title" allowfullscreen loading="lazy"></iframe></div> -->
+    <article class="entry">
+      <div class="meta"><span class="num">W01</span>YYYY.MM.DD</div>
+      <div>
+        <span class="tag personal">Essay</span>
+        <h3>Essay title goes here</h3>
+        <p>Write the piece here, or a short excerpt with a link to the full text.</p>
+      </div>
+    </article>
+    <article class="entry">
+      <div class="meta"><span class="num">W02</span>YYYY.MM.DD</div>
+      <div>
+        <span class="tag personal">Vlog</span>
+        <h3>Vlog title goes here</h3>
+        <p>One line about the video.</p>
+        <div class="media-slot"><span>Video slot &mdash; paste a YouTube embed here</span></div>
+      </div>
+    </article>
+  </div>
 </section>
 
-<footer class="site-footer">
-  <div class="wrap">© 2026 Rushikesh Jadhav. Built by hand, updated by habit.</div>
-</footer>
+</main>
 
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; <span id="year">2026</span> Rushikesh Jadhav &middot; Water resources &middot; Remote sensing &amp; GIS &middot; Decision support</p>
+    <p class="foot-links">
+      <!-- EDIT: replace with your real profile links -->
+      <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/JRushi29" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.instagram.com/YOUR-INSTAGRAM" target="_blank" rel="noopener">Instagram</a>
+    </p>
+  </div>
+</footer>
 <script src="js/main.js"></script>
 </body>
 </html>
