@@ -66,43 +66,58 @@
 <section class="paper">
   <div class="wrap">
     <header class="masthead">
-      <p class="mast-top"><span>Every Saturday</span><span>Free &middot; Public edition</span></p>
+      <p class="mast-top"><span><span>Vol. 1</span><span>Every Saturday</span></span><span><span>Free</span><span>Public edition</span></span></p>
       <h1>The Water, Climate &amp; AI Brief</h1>
-      <p class="mast-sub">AI and machine learning in hydrology, flood modelling, groundwater, climate and agriculture
-        &mdash; what happened this week and why it matters.</p>
-      <nav class="sections" aria-label="Brief sections">
-        <span>Hydrology</span><span>Floods</span><span>Groundwater</span><span>Climate</span><span>Agriculture</span><span>Policy</span>
-      </nav>
+      <svg class="wave-rule" viewBox="0 0 1000 14" preserveAspectRatio="none" aria-hidden="true"><path d="M0 7 Q 12.5 0 25 7 T 50 7 T 75 7 T 100 7 T 125 7 T 150 7 T 175 7 T 200 7 T 225 7 T 250 7 T 275 7 T 300 7 T 325 7 T 350 7 T 375 7 T 400 7 T 425 7 T 450 7 T 475 7 T 500 7 T 525 7 T 550 7 T 575 7 T 600 7 T 625 7 T 650 7 T 675 7 T 700 7 T 725 7 T 750 7 T 775 7 T 800 7 T 825 7 T 850 7 T 875 7 T 900 7 T 925 7 T 950 7 T 975 7 T 1000 7" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+      <p class="mast-sub">What happened this week in AI and machine learning for hydrology, floods, groundwater,
+        climate and agriculture, and why it matters.</p>
+      <nav class="sec-nav" aria-label="Filter by section"><button type="button" class="active" data-section="all" aria-pressed="true">All sections</button><button type="button" data-section="hydrology" aria-pressed="false">Hydrology</button><button type="button" data-section="floods" aria-pressed="false">Floods</button><button type="button" data-section="groundwater" aria-pressed="false">Groundwater</button><button type="button" data-section="climate" aria-pressed="false">Climate</button><button type="button" data-section="agriculture" aria-pressed="false">Agriculture</button><button type="button" data-section="policy" aria-pressed="false">Policy</button></nav>
     </header>
 
-    <!-- LATEST EDITION: when a new edition is published, move the current one into the archive list below
-         and paste the new one here. Use editions/_template.html for the full edition page. -->
-    <article class="lead-story">
-      <p class="edition-meta">Edition 001 &middot; <!-- EDIT: date -->Coming soon</p>
-      <h2>The first edition lands on a Saturday soon.</h2>
-      <p>Each edition is a five-minute read: the week's key developments in AI for water and climate, open-source
-        and commercial flood modelling, government programmes in water and agriculture, and the research gaps
-        they reveal. Short items, one line on why each matters, links to the source.</p>
-    </article>
+    <div class="front">
+      <!-- LATEST EDITION: when a new edition is published, add it to the archive below and
+           replace this lead story with its headline. Full edition pages use editions/_template.html. -->
+      <article class="lead-story">
+        <p class="edition-meta"><span class="no">Edition 001</span><span><!-- EDIT: date -->First issue coming soon</span><span>5-minute read</span></p>
+        <h2>A short Saturday read on where water science and AI are heading.</h2>
+        <p class="dek">Each edition picks the week's most useful developments and says in one line why each one matters.</p>
+        <p>It covers new models and open tools for flood and hydrology work, new satellite missions and
+          datasets, government programmes in water and agriculture, and one research gap worth working on.
+          Every item links to its source.</p>
+        <p class="why"><strong>Who it's for:</strong> researchers, engineers and administrators who need to keep up
+          without reading everything.</p>
+      </article>
+
+      <aside class="rail" aria-label="In every edition">
+        <h3>In every edition</h3>
+        <ol class="contents">
+          <li><strong>Top stories</strong><span>The 3 to 5 developments that matter most</span></li>
+          <li><strong>Models &amp; tools</strong><span>New releases in flood, hydrology and climate modelling</span></li>
+          <li><strong>Data &amp; satellites</strong><span>Missions, products and open datasets</span></li>
+          <li><strong>Policy &amp; programmes</strong><span>Government initiatives in water and agriculture</span></li>
+          <li><strong>The gap</strong><span>One open problem these stories point to</span></li>
+        </ol>
+        <div class="facts-strip">
+          <div><b>Sat</b><span>Published every week</span></div>
+          <div><b>5 min</b><span>Typical reading time</span></div>
+        </div>
+      </aside>
+    </div>
 
     <div class="paper-cols">
       <section>
-        <h3>What you'll find in each edition</h3>
-        <ul>
-          <li><strong>Top stories</strong> &mdash; the 3&ndash;5 developments that matter most.</li>
-          <li><strong>Models &amp; tools</strong> &mdash; new releases in flood, hydrology and climate modelling.</li>
-          <li><strong>Data</strong> &mdash; new satellite missions and open datasets.</li>
-          <li><strong>Policy &amp; programmes</strong> &mdash; government initiatives in water and agriculture.</li>
-          <li><strong>The gap</strong> &mdash; one open problem worth working on.</li>
-        </ul>
+        <h3>Sections</h3>
+        <ul class="archive sections-list"><li data-section="hydrology"><span class="sec-label">Hydrology</span><span>Rainfall–runoff, streamflow and the models behind them</span></li><li data-section="floods"><span class="sec-label">Floods</span><span>Forecasting, inundation mapping and early warning</span></li><li data-section="groundwater"><span class="sec-label">Groundwater</span><span>Aquifers, recharge and satellite gravimetry</span></li><li data-section="climate"><span class="sec-label">Climate</span><span>Extremes, projections and downscaling</span></li><li data-section="agriculture"><span class="sec-label">Agriculture</span><span>Irrigation, crop water use and drought</span></li><li data-section="policy"><span class="sec-label">Policy</span><span>Government programmes in water and agriculture</span></li></ul>
       </section>
       <section>
         <h3>Archive</h3>
-        <!-- EDIT: one <li> per past edition, newest first:
-             <li><a href="editions/2026-11-07.html"><span>No. 001</span> 07 Nov 2026 — Headline of the week</a></li> -->
-        <ul class="archive">
-          <li class="empty">Past editions will be listed here.</li>
+        <!-- EDIT: one <li> per past edition, newest first. data-section lists the edition's main sections
+             (space-separated) so the chips above can filter it:
+             <li data-sections="floods hydrology"><span class="num">001</span><a href="editions/2026-11-07.html">Headline of the week</a><span class="date">07 Nov 2026</span></li> -->
+        <ul class="archive" id="archive">
+          <li class="empty">Past editions will be listed here after the first issue.</li>
         </ul>
+        <p class="archive-none is-hidden">No editions in this section yet.</p>
       </section>
     </div>
   </div>

@@ -203,6 +203,45 @@
       p.style.setProperty('--len', Math.ceil(p.getTotalLength()));
     });
 
+    /* ---------- Weekly Brief: section filter ---------- */
+    var secButtons = document.querySelectorAll('.sec-nav button');
+    if (secButtons.length) {
+      var paper = document.querySelector('.paper');
+      var applySection = function (sec) {
+        secButtons.forEach(function (b) {
+          var on = b.getAttribute('data-section') === sec;
+          b.classList.toggle('active', on); b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        paper.querySelectorAll('.item[data-section], .lead-story[data-section]').forEach(function (el) {
+          el.classList.toggle('is-hidden', sec !== 'all' && el.getAttribute('data-section') !== sec);
+        });
+        var firstCol = true;
+        paper.querySelectorAll('.desk-grid > section').forEach(function (col) {
+          var hide = !col.querySelector('.item:not(.is-hidden)');
+          col.classList.toggle('is-hidden', hide);
+          col.classList.toggle('col-first', !hide && firstCol);
+          if (!hide) firstCol = false;
+        });
+        var front = paper.querySelector('.front'), lead = paper.querySelector('.front .lead-story');
+        if (front && lead) front.classList.toggle('no-lead', lead.classList.contains('is-hidden'));
+        var arch = paper.querySelectorAll('#archive li[data-sections]'), shownArch = 0;
+        arch.forEach(function (li) {
+          var hit = sec === 'all' || (' ' + li.getAttribute('data-sections') + ' ').indexOf(' ' + sec + ' ') > -1;
+          li.classList.toggle('is-hidden', !hit); if (hit) shownArch++;
+        });
+        var none = paper.querySelector('.archive-none');
+        if (none) none.classList.toggle('is-hidden', sec === 'all' || shownArch > 0);
+        var empty = paper.querySelector('#archive li.empty');
+        if (empty) empty.classList.toggle('is-hidden', sec !== 'all');
+      };
+      secButtons.forEach(function (b) {
+        b.addEventListener('click', function () {
+          var sec = b.getAttribute('data-section');
+          applySection(b.classList.contains('active') && sec !== 'all' ? 'all' : sec);
+        });
+      });
+    }
+
     /* ---------- Footer year ---------- */
     var y = document.getElementById('year');
     if (y) y.textContent = new Date().getFullYear();

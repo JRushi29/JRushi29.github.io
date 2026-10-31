@@ -66,38 +66,72 @@
 <section class="paper">
   <div class="wrap">
     <!-- TEMPLATE: copy this file to editions/YYYY-MM-DD.html and fill it in.
-         Public edition rule: news and analysis only. -->
-    <header class="masthead small">
-      <p class="mast-top"><span>No. 000</span><span>DD Month YYYY</span></p>
+         Public edition rule: news and analysis only, no personal or client projects.
+         Tag every story with data-section: hydrology, floods, groundwater, climate, agriculture or policy. -->
+    <header class="masthead">
+      <p class="mast-top"><span><span>No. 000</span><span>Saturday, DD Month YYYY</span></span><span><span>5-minute read</span></span></p>
       <p class="mast-title"><a href="../brief.html">The Water, Climate &amp; AI Brief</a></p>
+      <svg class="wave-rule" viewBox="0 0 1000 14" preserveAspectRatio="none" aria-hidden="true"><path d="M0 7 Q 12.5 0 25 7 T 50 7 T 75 7 T 100 7 T 125 7 T 150 7 T 175 7 T 200 7 T 225 7 T 250 7 T 275 7 T 300 7 T 325 7 T 350 7 T 375 7 T 400 7 T 425 7 T 450 7 T 475 7 T 500 7 T 525 7 T 550 7 T 575 7 T 600 7 T 625 7 T 650 7 T 675 7 T 700 7 T 725 7 T 750 7 T 775 7 T 800 7 T 825 7 T 850 7 T 875 7 T 900 7 T 925 7 T 950 7 T 975 7 T 1000 7" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+      <nav class="sec-nav" aria-label="Filter by section"><button type="button" class="active" data-section="all" aria-pressed="true">All sections</button><button type="button" data-section="hydrology" aria-pressed="false">Hydrology</button><button type="button" data-section="floods" aria-pressed="false">Floods</button><button type="button" data-section="groundwater" aria-pressed="false">Groundwater</button><button type="button" data-section="climate" aria-pressed="false">Climate</button><button type="button" data-section="agriculture" aria-pressed="false">Agriculture</button><button type="button" data-section="policy" aria-pressed="false">Policy</button></nav>
     </header>
 
-    <article class="lead-story">
-      <p class="edition-meta">Top story</p>
-      <h1>Headline of the week</h1>
-      <p>Two or three sentences on what happened.</p>
-      <p class="why"><strong>Why it matters:</strong> one or two sentences of analysis.</p>
-      <p class="src"><a href="#">Source &rarr;</a></p>
-    </article>
+    <div class="front">
+      <article class="lead-story" data-section="floods">
+        <p class="sec-label">Floods</p>
+        <h1>Headline of the week</h1>
+        <p class="dek">One sentence that tells the reader what happened.</p>
+        <p>Two or three sentences of detail: who did it, what is new, and what it was tested on.</p>
+        <p class="why"><strong>Why it matters:</strong> one or two sentences of analysis for people who build or use
+          flood and water models.</p>
+        <p class="src"><a href="#">Source</a></p>
+      </article>
 
-    <div class="paper-cols">
-      <section>
-        <h3>Models &amp; tools</h3>
-        <div class="item"><h4>Item headline</h4><p>What happened. <em>Why it matters.</em></p><a href="#">Source</a></div>
-        <div class="item"><h4>Item headline</h4><p>What happened. <em>Why it matters.</em></p><a href="#">Source</a></div>
-      </section>
-      <section>
-        <h3>Data &amp; satellites</h3>
-        <div class="item"><h4>Item headline</h4><p>What happened. <em>Why it matters.</em></p><a href="#">Source</a></div>
-        <h3>Policy &amp; programmes</h3>
-        <div class="item"><h4>Item headline</h4><p>What happened. <em>Why it matters.</em></p><a href="#">Source</a></div>
-      </section>
+      <aside class="rail" aria-label="This week">
+        <h3>This week</h3>
+        <ol class="contents">
+          <li><strong>Story headline</strong><span>One-line summary</span></li>
+          <li><strong>Story headline</strong><span>One-line summary</span></li>
+          <li><strong>Story headline</strong><span>One-line summary</span></li>
+        </ol>
+        <h3>By the numbers</h3>
+        <!-- EDIT: three figures from this week's stories, each with its source in the story below. -->
+        <div class="facts-strip">
+          <div><b>00</b><span>What the number measures</span></div>
+          <div><b>00</b><span>What the number measures</span></div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="desk">
+      <div class="desk-grid">
+        <section>
+          <h3>Models &amp; tools</h3>
+          <div class="item" data-section="hydrology"><p class="sec-label">Hydrology</p><h4>Item headline</h4><p>What happened. <em>Why it matters.</em></p><a href="#">Source</a></div>
+          <div class="item" data-section="floods"><p class="sec-label">Floods</p><h4>Item headline</h4><p>What happened. <em>Why it matters.</em></p><a href="#">Source</a></div>
+        </section>
+        <section>
+          <h3>Data &amp; satellites</h3>
+          <div class="item" data-section="groundwater"><p class="sec-label">Groundwater</p><h4>Item headline</h4><p>What happened. <em>Why it matters.</em></p><a href="#">Source</a></div>
+          <div class="item" data-section="climate"><p class="sec-label">Climate</p><h4>Item headline</h4><p>What happened. <em>Why it matters.</em></p><a href="#">Source</a></div>
+        </section>
+        <section>
+          <h3>Policy &amp; programmes</h3>
+          <div class="item" data-section="policy"><p class="sec-label">Policy</p><h4>Item headline</h4><p>What happened. <em>Why it matters.</em></p><a href="#">Source</a></div>
+          <div class="item" data-section="agriculture"><p class="sec-label">Agriculture</p><h4>Item headline</h4><p>What happened. <em>Why it matters.</em></p><a href="#">Source</a></div>
+        </section>
+      </div>
     </div>
 
     <aside class="gap-box">
       <h3>The gap</h3>
-      <p>One open research or practice problem these stories point to.</p>
+      <p>One open research or practice problem these stories point to, in two or three sentences.</p>
     </aside>
+
+    <nav class="edition-nav" aria-label="Editions">
+      <a href="#">&larr; Previous edition</a>
+      <a href="../brief.html">All editions</a>
+      <a href="#">Next edition &rarr;</a>
+    </nav>
   </div>
 </section>
 
