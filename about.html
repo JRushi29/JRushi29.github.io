@@ -17,28 +17,49 @@
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<meta name="theme-color" content="#051425">
+<script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';d.setAttribute('data-theme',t);d.classList.add('js')})();</script>
 </head>
-<body>
+<body data-page="about">
 <a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
 <header class="site-header">
-  <div class="wrap">
-    <a href="index.html" class="brand">Rushikesh Jadhav<span>.</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="index.html">Journey</a></li>
-        <li><a href="dev-research.html">Dev &amp; Research</a></li>
-        <li><a href="brief.html">Weekly Brief</a></li>
-        <li><a href="articles.html">Articles</a></li>
-        <li><a href="writing.html">Writing</a></li>
-        <li><a href="hobbies.html">Hobbies</a></li>
-        <li><a href="about.html" class="active">About</a></li>
+  <div class="nav-shell">
+    <a href="index.html" class="brand" aria-label="Rushikesh Jadhav, home"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Rushikesh Jadhav</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <ul class="nav-list">
+        <li><a href="index.html" data-page="journey">Journey</a></li>
+        <li><a href="dev-research.html" data-page="work">Work</a></li>
+        <li><a href="brief.html" data-page="brief">Weekly brief</a></li>
+        <li class="has-menu">
+          <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-notebook" data-page="notebook">Notebook <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="menu" id="menu-notebook">
+            <a href="articles.html" data-sub="articles"><span class="mi c1"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 3h7l3 3v11H5z"/><path d="M8 9h5M8 12h5M8 15h3" stroke-linecap="round"/></svg></span><strong>Articles</strong><span class="d">Long-form notes on methods and tools</span></a>
+            <a href="writing.html" data-sub="writing"><span class="mi c2"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="10" height="10" rx="2"/><path d="M13 9l4-2v6l-4-2z" stroke-linejoin="round"/></svg></span><strong>Writing &amp; vlogs</strong><span class="d">Essays, videos and talks</span></a>
+            <a href="hobbies.html" data-sub="hobbies"><span class="mi c3"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2 15l5-7 3 4 2-3 6 6z" stroke-linejoin="round"/><circle cx="14" cy="5" r="1.6"/></svg></span><strong>Hobbies</strong><span class="d">Travel, reading and opinions</span></a>
+          </div>
+        </li>
+        <li><a href="about.html" data-page="about">About</a></li>
       </ul>
+      <span class="nav-indicator" aria-hidden="true"></span>
     </nav>
+    <div class="nav-tools">
+      <button class="icon-btn cmd-btn" type="button" aria-label="Search the site"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="M13.5 13.5L17 17" stroke-linecap="round"/></svg><kbd>Ctrl K</kbd></button>
+      <button class="icon-btn theme-btn" type="button" aria-label="Switch light or dark theme"><svg class="moon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M16 12.5A6.5 6.5 0 017.5 4a6.5 6.5 0 108.5 8.5z" stroke-linejoin="round"/></svg><svg class="sun" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10" cy="10" r="3.5"/><path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.3 4.3l1.4 1.4M14.3 14.3l1.4 1.4M4.3 15.7l1.4-1.4M14.3 5.7l1.4-1.4" stroke-linecap="round"/></svg></button>
+      <button class="icon-btn nav-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span class="bars"></span></button>
+    </div>
   </div>
 </header>
+<div class="cmdk" role="dialog" aria-modal="true" aria-label="Search the site">
+  <div class="cmdk-backdrop"></div>
+  <div class="cmdk-panel">
+    <label class="cmdk-input"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="M13.5 13.5L17 17" stroke-linecap="round"/></svg><input type="text" placeholder="Search pages and projects" aria-label="Search pages and projects" autocomplete="off" role="combobox" aria-expanded="true" aria-controls="cmdk-list"></label>
+    <ul class="cmdk-list" id="cmdk-list" role="listbox"></ul>
+    <div class="cmdk-foot"><span><kbd>↑</kbd><kbd>↓</kbd>Move</span><span><kbd>Enter</kbd>Open</span><span><kbd>Esc</kbd>Close</span></div>
+  </div>
+</div>
 
 <main id="main">
 
