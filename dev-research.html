@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dev &amp; Research — Rushikesh Jadhav</title>
-<meta name="description" content="HEC-HMS forecast automation, a dam-break population-at-risk dashboard, GEE Scout and the roadmap to flood decision support.">
+<meta name="description" content="HEC-HMS forecast automation, a dam-break population-at-risk dashboard, a QGIS dam-break map series tool, GEE Scout and the roadmap to flood decision support.">
 <meta name="author" content="Rushikesh Jadhav">
 <link rel="canonical" href="https://jrushi29.github.io/dev-research.html">
 <!-- Link preview (LinkedIn / WhatsApp / X). Add images/og-cover.png (1200x630) for a picture preview. -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Dev &amp; Research — Rushikesh Jadhav">
-<meta property="og:description" content="HEC-HMS forecast automation, a dam-break population-at-risk dashboard, GEE Scout and the roadmap to flood decision support.">
+<meta property="og:description" content="HEC-HMS forecast automation, a dam-break population-at-risk dashboard, a QGIS dam-break map series tool, GEE Scout and the roadmap to flood decision support.">
 <meta property="og:url" content="https://jrushi29.github.io/dev-research.html">
 <meta property="og:image" content="https://jrushi29.github.io/images/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -72,6 +72,7 @@
     <nav class="toc" aria-label="On this page">
       <a href="#hms">HEC-HMS automation</a>
       <a href="#par">Dam-break PAR dashboard</a>
+      <a href="#maps">Dam-break map series tool</a>
       <a href="#gee">GEE Scout</a>
       <a href="#roadmap">Roadmap</a>
       <a href="#stack">Toolkit</a>
@@ -156,6 +157,56 @@
   </div>
 </section>
 
+<section class="project" id="maps">
+  <div class="wrap project-grid">
+    <div class="project-side">
+      <span class="tag dev">Dev &middot; QGIS tool</span>
+      <p class="status"><span class="dot live"></span>Released &middot; v1.0 (Nov 2026)</p>
+      <dl class="facts">
+        <dt>Platform</dt><dd>QGIS 3.28+ Processing toolbox</dd>
+        <dt>Code</dt><dd>Python (PyQGIS, GDAL, NumPy)</dd>
+        <dt>Input</dt><dd>Styled dam-break result layers, report file</dd>
+        <dt>Output</dt><dd>Numbered map sheets (Atlas + PNG)</dd>
+        <dt>Use</dt><dd>Emergency action plan mapping</dd>
+      </dl>
+    </div>
+    <div class="project-body">
+      <h2>Dam-break map series tool for QGIS</h2>
+      <p class="lead">An emergency action plan needs the flood mapped sheet by sheet at a fixed scale, from the dam
+        to where the flood ends. Laying out those sheets by hand takes hours for every dam and every map type.
+        This QGIS tool does it in about a minute.</p>
+      <ol class="flow" aria-label="Tool stages">
+        <li><strong>Read</strong><span>Dam details from the report file</span></li>
+        <li><strong>Trace</strong><span>Flood path downstream from the dam</span></li>
+        <li><strong>Lay sheets</strong><span>Fixed-scale sheets, overlapping, until the flood ends</span></li>
+        <li><strong>Fill layout</strong><span>Title, heading, legend, map information</span></li>
+        <li><strong>Atlas</strong><span>Map 01, 02, 03 &hellip; in QGIS</span></li>
+        <li><strong>Export</strong><span>PNG at any dpi</span></li>
+      </ol>
+      <h3>What it does</h3>
+      <ul class="ticks">
+        <li>Follows the flood along its flow path from the dam and places sheets one after another until every
+          flooded cell is mapped &mdash; Sheet 1 automatically fits the dam and its reservoir.</li>
+        <li>Works for any result layer: maximum depth, velocity, hazard, vulnerability, arrival time. You choose
+          the layer and its symbology, the map heading and the legend title.</li>
+        <li>Reuses one sheet index for every theme, so sheet 05 covers the same ground in the depth, velocity and
+          hazard series.</li>
+        <li>Any scale and resolution: the scale text, scale bar and lat/long grid follow the chosen scale.</li>
+        <li>Fills river, basin, peak breach discharge, population at risk and date from a report file, so the
+          map text always matches the analysis.</li>
+      </ul>
+      <h3>Why it matters</h3>
+      <p>Map preparation is often the slowest step after the modelling. Automating it makes the maps consistent
+        across every dam and every theme, and frees time for checking the results instead of moving rectangles.</p>
+      <p>
+        <a class="btn primary" href="downloads/DamBreak_Map_Series_v1.0.zip" download>Download the tool (v1.0, zip)</a>
+      </p>
+      <p class="status">Includes the Processing script, an A4 layout template, a report template and a user guide.
+        Free to use and adapt &mdash; please keep the credit.</p>
+    </div>
+  </div>
+</section>
+
 <section class="project" id="gee">
   <div class="wrap project-grid">
     <div class="project-side">
@@ -211,7 +262,8 @@
       <li>
         <span class="when">Later</span>
         <div><h3>Open-source toolkits</h3>
-          <p>Releasing reusable parts of the HMS and dam-break tooling for other modellers.</p></div>
+          <p>Releasing reusable parts of the HMS and dam-break tooling for other modellers &mdash; started with the
+            <a href="#maps">dam-break map series tool</a>.</p></div>
       </li>
     </ol>
   </div>
@@ -222,7 +274,7 @@
     <div class="section-head"><h2>Toolkit</h2></div>
     <div class="stack-grid">
       <div><h3>Modelling</h3><p>HEC-HMS &middot; HEC-RAS &middot; SWAT &middot; Vortex &middot; HEC-DSS</p></div>
-      <div><h3>Geospatial</h3><p>Google Earth Engine &middot; QGIS &middot; ArcGIS &middot; remote sensing data</p></div>
+      <div><h3>Geospatial</h3><p>Google Earth Engine &middot; QGIS &amp; PyQGIS &middot; ArcGIS &middot; remote sensing data</p></div>
       <div><h3>Code</h3><p>Python &middot; Jython &middot; geospatial Python stack</p></div>
       <div><h3>Delivery</h3><p>Streamlit dashboards &middot; automated reports &middot; GitHub</p></div>
     </div>

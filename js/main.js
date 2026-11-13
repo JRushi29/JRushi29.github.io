@@ -108,6 +108,7 @@
       ['Pages', 'About', 'about.html', 'Background and contact'],
       ['Projects', 'Headless HEC-HMS forecast pipeline', 'dev-research.html#hms', 'Automation'],
       ['Projects', 'Dam-break population-at-risk dashboard', 'dev-research.html#par', 'Dashboard'],
+      ['Projects', 'Dam-break map series tool (QGIS)', 'dev-research.html#maps', 'Atlas + PNG, free download'],
       ['Projects', 'GEE Scout', 'dev-research.html#gee', 'Dataset discovery'],
       ['Projects', 'Roadmap', 'dev-research.html#roadmap', 'Where the work is heading'],
       ['Projects', 'Toolkit', 'dev-research.html#stack', 'Models, code, delivery'],
