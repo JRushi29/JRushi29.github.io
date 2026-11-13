@@ -32,6 +32,8 @@ Search for `EDIT:` in any file to find what to fill in.
 
 **Public content rule:** describe methods and tools only. No client or government data, no project, site, dam or event names. The public brief carries news and analysis only.
 
+**Downloads:** tool packs live in `downloads/` (e.g. `downloads/DamBreak_Map_Series_v1.0.zip`, linked from `dev-research.html#maps`). Check a pack for client data before adding it.
+
 **Add images:** put them in `images/`. Expected files:
 - `images/profile.jpg` (About page)
 - `images/og-cover.png` (link preview, already included)
